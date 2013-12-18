@@ -27,9 +27,10 @@
     self.window.rootViewController = nav;
     
     self.omniButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    self.omniButton.frame = CGRectMake(10, self.window.frame.size.height - 40 - 10, 40, 40);
+    self.omniButton.frame = CGRectMake(10, self.window.frame.size.height - 40 - 10, 120, 40);
     self.omniButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-    [self.omniButton setTitle:@"B" forState:UIControlStateNormal];
+    self.omniButton.titleLabel.font = [UIFont systemFontOfSize:13];
+    [self.omniButton setTitle:@"Tap or Drag Me" forState:UIControlStateNormal];
     [self.omniButton addTarget:self action:@selector(_omniButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.omniButton addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(_omniButtonPanned:)]];
     [self.window.rootViewController.view addSubview:self.omniButton];
